@@ -19,8 +19,8 @@ const Navbar = () => {
                 }
             </div>
             <div className={`${open ? '' : 'hidden'} lg:flex gap-4 text-lg font-normal text-[#131313]/[0.8] duration-1000`}>
-                <NavLink><p>Home</p></NavLink>
-                <NavLink><p>Listed Books</p></NavLink>
+                <NavLink to={"/"}><p>Home</p></NavLink>
+                <NavLink to={"/listed-books"}><p>Listed Books</p></NavLink>
                 <NavLink><p>Pages to Read</p></NavLink>
             </div>
             <div>
