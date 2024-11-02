@@ -5,11 +5,11 @@ import { addReadListToLS, addWhishListToLS } from '../utility';
 
 const BookDetails = () => {
     const books = useLoaderData()
-    const bookId  = useParams()
+    const bookId = useParams()
 
     const element = books.find((item) => item.id == bookId.id)
 
-    const {id, bookName, author, image, category, rating, tags, review, yearOfPublishing, publisher, totalPages } = element;
+    const { id, bookName, author, image, category, rating, tags, review, yearOfPublishing, publisher, totalPages } = element;
 
     // console.log(element);
 
@@ -56,11 +56,11 @@ const BookDetails = () => {
                 </div>
                 <div className='flex gap-4'>
                     <button
-                        onClick={()=> addReadListToLS(id)}
+                        onClick={() => addReadListToLS(id)}
                         className="btn bg-[#23BE0A]  text-white hover:bg-transparent hover:text-black">Mark as Read
                     </button>
                     <button
-                        onClick={()=> addWhishListToLS(id)}
+                        onClick={() => addWhishListToLS(id)}
                         className="btn bg-[#50B1C9] text-white hover:bg-transparent hover:text-black">Wishlist
                     </button>
                 </div>

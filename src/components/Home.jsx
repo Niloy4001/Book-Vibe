@@ -11,9 +11,9 @@ const Home = () => {
             .then(data => setBooks(data))
     }, [])
 
-  
-    
-    
+
+
+
     return (
         <div>
             <Banner></Banner>

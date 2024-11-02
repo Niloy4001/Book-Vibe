@@ -4,6 +4,8 @@ import { LuUsers } from "react-icons/lu";
 import { FaRegFileLines } from "react-icons/fa6";
 
 const ReadList = ({ readList }) => {
+
+
     const { bookName, author, image, category, rating, tags, review, yearOfPublishing, publisher, totalPages } = readList;
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 items-center'>

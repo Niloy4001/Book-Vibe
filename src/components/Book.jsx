@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
-    const { bookName, author, image, rating, category, tags,id } = book;
+    const { bookName, author, image, rating, category, tags, id } = book;
     // console.log(book);
 
     return (
