@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import '../active.css'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -19,9 +20,9 @@ const Navbar = () => {
                 }
             </div>
             <div className={`${open ? '' : 'hidden'} lg:flex gap-4 text-lg font-normal text-[#131313]/[0.8] duration-1000`}>
-                <NavLink to={"/"}><p>Home</p></NavLink>
-                <NavLink to={"/listed-books"}><p>Listed Books</p></NavLink>
-                <NavLink><p>Pages to Read</p></NavLink>
+                <NavLink to={"/"}><p className='px-4 py-2'>Home</p></NavLink>
+                <NavLink to={"/listed-books"}><p className='px-4 py-2'>Listed Books</p></NavLink>
+                <NavLink to={"/pagesToRead"}><p className='px-4 py-2'>Pages to Read</p></NavLink>
             </div>
             <div>
                 <button className="btn bg-[#23BE0A] text-white hover:bg-transparent hover:text-black">Sign In</button>

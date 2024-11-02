@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import { addReadListToLS } from '../utility';
+import { addReadListToLS, addWhishListToLS } from '../utility';
 
 
 const BookDetails = () => {
@@ -60,6 +60,7 @@ const BookDetails = () => {
                         className="btn bg-[#23BE0A]  text-white hover:bg-transparent hover:text-black">Mark as Read
                     </button>
                     <button
+                        onClick={()=> addWhishListToLS(id)}
                         className="btn bg-[#50B1C9] text-white hover:bg-transparent hover:text-black">Wishlist
                     </button>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStoredReadList } from '../utility';
+import { getStoredReadList, getStoredWhishList } from '../utility';
 import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -7,19 +7,39 @@ import ReadList from './ReadList';
 
 const ListedBooks = () => {
 
-    const allBooks = useLoaderData()
-    const [readList, setReadList] = useState([])
-    
+    // const allBooks = useLoaderData()
 
+    // console.log(allBooks);
+    const [allBooks, setAllBooks] = useState([])
+
+    const [readList, setReadList] = useState([])
+
+    const [whishList, setWhishList] = useState([])
 
 
     useEffect(() => {
+        fetch('booksData.json')
+            .then(res => res.json())
+            .then(data => setAllBooks(data))
+    })
+
+
+    useEffect(() => {
+
         const storedReadList = getStoredReadList()
-
-
         const readBooks = allBooks.filter((item) => storedReadList.includes(item.id))
         setReadList(readBooks)
-    }, [])
+
+        const storedWhishList = getStoredWhishList()
+        const whishBooks = allBooks.filter((item) => storedWhishList.includes(item.id))
+        setWhishList(whishBooks)
+
+    }, [allBooks])
+
+
+    // useEffect(()=>{
+
+    // },[])
 
 
 
@@ -33,12 +53,14 @@ const ListedBooks = () => {
                 </TabList>
 
                 <TabPanel>
-                        {
-                            readList.map((item)=> <ReadList readList={item}></ReadList>)
-                        }
+                    {
+                        readList.map((item) => <ReadList readList={item} key={item.id}></ReadList>)
+                    }
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    {
+                        whishList.map((item) => <ReadList readList={item} key={item.id}></ReadList>)
+                    }
                 </TabPanel>
             </Tabs>
 
