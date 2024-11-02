@@ -17,7 +17,7 @@ const ReadList = ({ readList }) => {
             <div className='col-span-1 md:col-span-1 lg:col-span-3'>
                 <h1 className='font-bold  text-xl md:text-2xl text-[#131313] mb-4'>{bookName} </h1>
                 <p className='font-medium  text-xs md:text-base text-[#131313CC] mb-6'>By : {author} </p>
-                <div className='flex gap-5 mb-5'>
+                <div className='flex flex-col md:flex-row items-start gap-2 md:gap-5 mb-5'>
                     <span className='font-bold  text-sm md:text-base text-[#131313]'>Tag : </span>
                     {/* <button className='btn btn-xs font-medium  text-xs md:text-base text-[#23BE0A]'>Identity</button>
                     <button className='btn btn-xs font-medium  text-xs md:text-base text-[#23BE0A]'>Identity</button> */}
@@ -31,7 +31,7 @@ const ReadList = ({ readList }) => {
                     <p className='flex gap-2 items-center'><span><FaRegFileLines /></span><span>Page: {totalPages}</span></p>
                 </div>
 
-                <div className='font-medium  text-xs md:text-base text-[#131313CC] flex gap-4 items-center'>
+                <div className='font-medium  text-xs md:text-base text-[#131313CC] flex gap-2 md:gap-4 items-start md:items-center flex-col md:flex-row'>
                     <p className='btn btn-sm bg-[#328EFF26] rounded-full text-[#328EFF]'>{category} </p>
                     <p className='text-orange-400'>Rating : {rating}</p>
                     <p className='btn btn-sm bg-[#23BE0A] text-white rounded-full'>View Details</p>
